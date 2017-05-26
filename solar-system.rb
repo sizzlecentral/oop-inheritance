@@ -3,6 +3,7 @@
 
 class System
 
+  require_relative 'solar-system-bodies'
   attr_reader :bodies
 
   def initialize
@@ -23,8 +24,8 @@ class System
 
 # ----- Instance Methods ----- #
 
-  def add(planet)
-    @@bodies << planet
+  def add_bodies(body)
+    @@bodies << body
   end
 
   def total_mass
@@ -41,8 +42,3 @@ end
 # ----- End of System class ----- #
 
 milkyway = System.create
-
-# p System.all
-milkyway.add("Neptune")
-milkyway.add("Venus")
-p System.all
