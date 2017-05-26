@@ -15,7 +15,7 @@ class QuoteCollector < Multilinguist
 
   def unleash
     @@quotes.each do |quote|
-      say_in_local_language(quote)
+      say_in_local_language(quote) # returning quotes, but not in correct language
     end
   end
 
@@ -33,5 +33,7 @@ me = QuoteCollector.new
 me.add_new_quote("I think, therefore I am.")
 me.add_new_quote("To be, or not to be, that is the question.")
 me.travel_to("France")
-# puts me.unleash
-puts me.random_quote
+puts me.unleash
+me.travel_to("Italy")
+puts me.unleash
+# puts me.random_quote
